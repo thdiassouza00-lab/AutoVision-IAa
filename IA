@@ -1,0 +1,157 @@
+# AutoVision IA — Reconhecimento de Veículos com Inteligência Artificial
+
+## 1. Tema do projeto
+
+Este projeto apresenta uma aplicação prática de Inteligência Artificial na área de **Visão Computacional**.
+
+O protótipo desenvolvido recebe uma imagem como entrada e utiliza um modelo de IA para detectar veículos, como carros, motos, ônibus, caminhões e bicicletas.
+
+A ideia central é simular um sistema que poderia ser usado em uma loja de veículos, concessionária ou sistema de organização de estoque para identificar automaticamente veículos em imagens.
+
+---
+
+## 2. Problema que o projeto resolve
+
+Empresas que trabalham com veículos lidam diariamente com muitas fotos de carros e motos. Em um sistema manual, uma pessoa precisa olhar cada imagem, identificar o veículo e organizar essas informações.
+
+Com Inteligência Artificial, esse processo pode ser automatizado. O sistema analisa a imagem e identifica se existe um veículo presente, mostrando também o nível de confiança da detecção.
+
+---
+
+## 3. Intuição da Inteligência Artificial usada
+
+A aplicação utiliza um modelo de Visão Computacional chamado **YOLO**, sigla para *You Only Look Once*.
+
+A ideia do YOLO é analisar a imagem de uma vez só e localizar objetos presentes nela. Em vez de verificar pedaço por pedaço de forma lenta, o modelo observa a imagem inteira e prevê:
+
+- onde está o objeto;
+- qual é o tipo de objeto;
+- qual a confiança da previsão.
+
+No nosso projeto, o foco é detectar objetos relacionados a veículos, como:
+
+- carro;
+- moto;
+- ônibus;
+- caminhão;
+- bicicleta.
+
+A IA funciona porque foi treinada previamente com muitas imagens. Durante esse treinamento, o modelo aprendeu padrões visuais, como formato, rodas, faróis, carroceria e outros elementos comuns em veículos.
+
+---
+
+## 4. Tecnologias utilizadas
+
+- **Python**: linguagem principal do projeto.
+- **Ultralytics YOLOv8**: biblioteca usada para carregar o modelo de IA.
+- **OpenCV**: biblioteca usada para manipulação e visualização de imagens.
+- **GitHub**: usado para armazenar e entregar o projeto.
+
+---
+
+## 5. Estrutura do projeto
+
+```text
+AutoVision-IA/
+│
+├── main.py
+├── webcam.py
+├── requirements.txt
+├── README.md
+├── roteiro_apresentacao.md
+├── .gitignore
+│
+└── imagens/
+    └── coloque_suas_imagens_aqui.txt
+```
+
+---
+
+## 6. Como executar o projeto
+
+### Passo 1 — Instalar as dependências
+
+No terminal, dentro da pasta do projeto, execute:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Passo 2 — Adicionar uma imagem
+
+Coloque uma imagem de carro, moto ou outro veículo dentro da pasta `imagens`.
+
+Exemplo:
+
+```text
+imagens/sentra.jpg
+```
+
+### Passo 3 — Rodar o sistema
+
+Execute:
+
+```bash
+python main.py --imagem imagens/sentra.jpg
+```
+
+---
+
+## 7. Resultado esperado
+
+O sistema irá:
+
+1. carregar a imagem;
+2. processar a imagem com IA;
+3. detectar veículos presentes;
+4. mostrar a confiança da detecção;
+5. abrir a imagem com uma caixa ao redor do objeto detectado;
+6. salvar uma imagem chamada `resultado_detectado.jpg`.
+
+Exemplo de saída no terminal:
+
+```text
+===== RESULTADO DA DETECÇÃO =====
+Objeto detectado: car
+Confiança: 96.80%
+-----------------------------
+Imagem com resultado salva como: resultado_detectado.jpg
+```
+
+---
+
+## 8. Demonstração prática
+
+Durante a apresentação, o projeto pode ser demonstrado da seguinte forma:
+
+1. Abrir a pasta do projeto.
+2. Mostrar rapidamente o arquivo `main.py`.
+3. Explicar que o modelo usado é o YOLOv8.
+4. Mostrar uma imagem dentro da pasta `imagens`.
+5. Executar o comando no terminal.
+6. Mostrar o resultado da detecção.
+7. Explicar a confiança gerada pelo modelo.
+
+---
+
+## 9. Limitações do projeto
+
+O protótipo funciona bem para detectar veículos em imagens comuns, mas possui algumas limitações:
+
+- pode errar se a imagem estiver muito escura;
+- pode falhar se o veículo estiver cortado ou escondido;
+- pode confundir objetos parecidos;
+- não identifica o modelo exato do carro, como Sentra, Clio ou Uno;
+- depende de um modelo já treinado.
+
+Mesmo com essas limitações, o projeto demonstra claramente a aplicação prática da Inteligência Artificial em Visão Computacional.
+
+---
+
+## 10. Conclusão
+
+O AutoVision IA mostra como a Inteligência Artificial pode ser usada para automatizar a identificação de veículos em imagens.
+
+A aplicação é simples, funcional e prática, permitindo compreender a intuição, o código e o funcionamento de um sistema real de IA.
+
+Esse tipo de tecnologia pode ser aplicado em concessionárias, estacionamentos, sistemas de segurança, controle de estoque e plataformas de venda de veículos.
